@@ -15,3 +15,7 @@ dependency-reduced-pom.xml
 README.html
 *.iml
 .idea
+.DS_Store
+.AppleDouble
+.LSOverride
+
