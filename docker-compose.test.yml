@@ -1,5 +1,4 @@
 sut:
   build: .
-  command: run_tests.sh
-  environment:
-    - IMAGE_NAME
+  image: erolstt/spring-rest-demo:latest
+  command: echo "hello world"
