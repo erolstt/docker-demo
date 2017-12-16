@@ -1,10 +1,4 @@
 sut:
-  build: .
-  links:
-      - rest
   working_dir: /hello-world-rest-service/build/libs/
   dockerfile: Dockerfile.test
   command: echo "hello world"
-
-rest:
-  image: erolstt/spring-rest-demo:latest
