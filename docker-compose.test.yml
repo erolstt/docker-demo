@@ -6,5 +6,4 @@ sut:
   command: echo "hello world"
 
 rest:
-  build: .
   image: erolstt/spring-rest-demo:latest
