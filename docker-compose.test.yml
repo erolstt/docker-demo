@@ -1,3 +1,10 @@
 sut:
-  image: erolstt/spring-rest-demo:latest
+  build: .
+  dockerfile: Dockerfile.test
   command: echo "hello world"
+  links:
+    - rest
+
+rest:
+  build: .
+  dockerfile: Dockerfile
