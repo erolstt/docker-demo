@@ -1,3 +1,5 @@
 sut:
   build: .
-  command: echo "Hello World"
+  command: run_tests.sh
+  environment:
+    - IMAGE_NAME
