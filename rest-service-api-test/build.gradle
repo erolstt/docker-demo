@@ -1,0 +1,19 @@
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'io.rest-assured:rest-assured:3.0.6'
+    testCompile 'org.awaitility:awaitility:3.0.0'
+}
+
+test {
+    systemProperties System.properties
+    systemProperties['user.dir'] = workingDir
+    outputs.upToDateWhen { false }
+
+    testLogging {
+        events "passed", "skipped", "failed", "standardError"
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

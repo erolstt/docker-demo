@@ -1,0 +1,5 @@
+rootProject.name = 'docker-demo'
+
+include 'hello-world-rest-service'
+include 'rest-service-api-test'
+
