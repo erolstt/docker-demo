@@ -8,4 +8,4 @@ RUN gradle wrapper --gradle-version 4.3.1
 RUN ./gradlew build
 WORKDIR /hello-world-rest-service/build/libs/
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
+ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0"]
