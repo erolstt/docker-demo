@@ -1,3 +1,4 @@
 sut:
-  build: ./hello-world-rest-service/
+  build:
+  dockerfile: Dockerfile.test
   command: ./gradlew rest-service-api-test:test
