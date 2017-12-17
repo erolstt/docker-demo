@@ -1,4 +1,4 @@
 sut:
   build:
-  dockerfile: Dockerfile.test
-  command: ./gradlew rest-service-api-test:test
+    dockerfile: Dockerfile.test
+    command: ./gradlew rest-service-api-test:test
