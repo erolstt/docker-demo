@@ -1,14 +1,18 @@
-sut:
-  build: ./rest-service-api-test/
-  depends on:
-    - rest
-  networks:
-    - back-end
+version: '3'
 
-rest:
-  build: ./hello-world-rest-service/
-  networks:
-    - back-end
+services:
 
-networks:
-  back-end:
+  sut:
+    build: ./rest-service-api-test/
+    depends on:
+      - rest
+    networks:
+      - back-end
+
+  rest:
+    build: ./hello-world-rest-service/
+    networks:
+      - back-end
+
+  networks:
+    back-end:
