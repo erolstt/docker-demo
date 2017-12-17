@@ -1,3 +1,14 @@
 sut:
-  build: .
-  command: ./gradlew rest-service-api-test:test
+  build: ./rest-service-api-test/
+  depends on:
+    - rest
+  networks:
+    - back-end
+
+rest:
+  build: ./hello-world-rest-service/
+  networks:
+    - back-end
+
+networks:
+  back-end:
