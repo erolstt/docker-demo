@@ -18,4 +18,6 @@ README.html
 .DS_Store
 .AppleDouble
 .LSOverride
-
+/hello-world-rest-service/out
+/rest-service-api-test/out
+/rest-service-api-test/build

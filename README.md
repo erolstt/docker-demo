@@ -34,32 +34,32 @@ Run integration test
 
 ## Docker Commands
 
-Building docker image:
+Build docker image:
 
 ```
 docker build -t spring-rest-hello-world:0.1 .
 
 ```
-Running docker image:
+Run docker image:
 
 ```
 docker run -d -p 8080:8080 --name rest-hello  spring-rest-hello-world:0.1
 
 ```
 
-Stopping docker container:
+Stop docker container:
 
 ```
 docker stop rest-hello
 ```
 
-Removing docker container:
+Remove docker container:
 
 ```
 docker rm rest-hello
 ```
 
-Removing docker image:
+Remove docker image:
 
 ```
 docker rmi spring-rest-hello-world:0.1
