@@ -2,13 +2,6 @@
     build: ./rest-service-api-test/
     links:
       - rest
-    networks:
-      - back-end
 
   rest:
     build: ./hello-world-rest-service/
-    networks:
-      - back-end
-
-  networks:
-    back-end:
