@@ -1,10 +1,6 @@
-version: '2'
-
-services:
-
   sut:
     build: ./rest-service-api-test/
-    depends on:
+    links:
       - rest
     networks:
       - back-end
