@@ -1,7 +1,3 @@
   sut:
-    build: ./rest-service-api-test/
-    links:
-      - rest
-
-  rest:
-    build: ./hello-world-rest-service/
+    build: .
+    dockerfile: Dockerfile.test
