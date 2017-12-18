@@ -1,8 +1,0 @@
-FROM gradle:4.3.1-jdk8-alpine
-LABEL maintainer="selitektay@gmail.com"
-RUN mkdir docker-demo
-COPY ./ /docker-demo/
-WORKDIR docker-demo
-RUN gradle wrapper --gradle-version 4.3.1
-EXPOSE 8080
-CMD ./gradlew rest-service-api-test:test
