@@ -1,11 +1,13 @@
-FROM gradle:4.3.1-jdk8-alpine
+FROM java:8-jdk-alpine
 LABEL maintainer="selitektay@gmail.com"
 RUN mkdir docker-demo
-COPY ./ /docker-demo/
-WORKDIR docker-demo
-RUN gradle wrapper --gradle-version 4.3.1
-#RUN ./gradlew build
-#WORKDIR /hello-world-rest-service/build/libs/
+COPY . /docker-demo/
+RUN ls
+RUN apk update && apk add bash
+WORKDIR /docker-demo/hello-world-rest-service/
+RUN ls
+RUN ./gradlew build
+WORKDIR /docker-demo/hello-world-rest-service/build/libs
+RUN ls
 EXPOSE 8080
-CMD ./gradlew bootRun
-#ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
+ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
