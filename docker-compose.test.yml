@@ -1,3 +1,0 @@
-  sut:
-    build: .
-    command: ./gradlew rest-service-api-test:test
