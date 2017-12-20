@@ -10,6 +10,4 @@ RUN ./gradlew build
 WORKDIR /docker-demo/hello-world-rest-service/build/libs
 RUN ls
 EXPOSE 8080
-#ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
-RUN java -jar gs-rest-service-0.1.0.jar
-RUN ./gradlew rest-service-api-test:test
+ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
