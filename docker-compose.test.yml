@@ -1,3 +1,4 @@
 sut:
-  build: .
+  build:
+  image: erolstt/spring-rest-demo:latest
   command: echo "Hello World Test *****************************"
