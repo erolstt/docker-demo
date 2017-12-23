@@ -32,6 +32,12 @@ Run integration test
 
 ```
 
+or
+```
+ ./gradlew rest-service-api-test:test -DBASE_URL=http://example.com:8080
+
+```
+
 ## Docker Commands
 
 Build docker image:
@@ -63,4 +69,33 @@ Remove docker image:
 
 ```
 docker rmi spring-rest-hello-world:0.1
+```
+
+#### Docker Compose
+
+Build environment:
+```
+docker-compose -f docker-compose.test.yml build
+```
+
+Spin up environment:
+
+```
+docker-compose -f docker-compose.test.yml up
+```
+
+Destroy environment:
+
+```
+docker-compose -f docker-compose.test.yml down
+```
+
+Remove all images:
+```
+docker-compose -f docker-compose.test.yml down --rmi all
+```
+
+Remove volumes:
+```
+docker-compose -f docker-compose.test.yml down -v
 ```

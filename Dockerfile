@@ -8,4 +8,4 @@ WORKDIR /docker-demo/hello-world-rest-service/
 RUN ./gradlew build
 WORKDIR /docker-demo/hello-world-rest-service/build/libs
 EXPOSE 8080
-#ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]
+ENTRYPOINT ["java", "-jar", "gs-rest-service-0.1.0.jar"]

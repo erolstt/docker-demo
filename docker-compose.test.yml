@@ -1,3 +1,16 @@
-sut:
-  image: erolstt/spring-rest-demo:latest
-  command: echo "Hello World Test *****************************"
+version: "3"
+
+services:
+
+  sut:
+    build:
+      context: ./
+      dockerfile: Dockerfile.test
+    command: ./gradlew rest-service-api-test:test -DBASE_URL=http://rest:8080
+    depends_on:
+      - rest
+
+  rest:
+    build: .
+    ports:
+      -  "8080:8080"
