@@ -6,7 +6,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.test
-    command: ./gradlew rest-service-api-test:test -DBASE_URL=http://rest:8080
+    command: ./wait-for-it.sh -t 60 rest:8080 -- echo "Spring rest is up" && ./gradlew rest-service-api-test:test -DBASE_URL=http://rest:8080
     depends_on:
       - rest
 
