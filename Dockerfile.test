@@ -5,4 +5,5 @@ RUN mkdir docker-demo
 COPY . /docker-demo/
 RUN apk update && apk add bash
 WORKDIR /docker-demo/
+RUN chmod +x  run-rest-test.sh
 RUN ./gradlew build -x test
