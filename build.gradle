@@ -17,9 +17,9 @@ buildscript {
     }
 }
 
-/******************
- *     DOCKER Tasks
- ******************/
+/*******************************
+ *         DOCKER Tasks
+ *******************************/
 
 apply plugin: 'com.bmuschko.docker-remote-api'
 
@@ -64,7 +64,7 @@ docker {
 
     task removeSpringBootRestImage(type: DockerRemoveImage) {
         group = 'Docker'
-        targetImageId { buildSpringBootRestImage.getImageId() }
+        targetImageId { buildSpringBootRestImage.tag }
     }
 }
 
