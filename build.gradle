@@ -14,6 +14,7 @@ buildscript {
 
     dependencies {
         classpath 'com.bmuschko:gradle-docker-plugin:3.2.1'
+        classpath 'org.hidetake:gradle-ssh-plugin:2.9.0'
     }
 }
 
@@ -68,4 +69,35 @@ docker {
     }
 }
 
+/*******************************
+ *         SSH Tasks
+ *******************************/
 
+apply plugin: 'org.hidetake.ssh'
+
+remotes {
+    linuxServer {
+        host = linuxHost
+        user = linuxUser
+        password = linuxPassword
+    }
+}
+
+ssh.settings {
+    knownHosts = allowAnyHosts
+}
+
+task createSpringRestImage {
+    group 'ssh'
+    description ''
+    doLast {
+        println 'Host Name : ' + linuxHost
+        println 'User Name : ' + linuxUser
+
+        ssh.run {
+            session(remotes.linuxServer) {
+                execute 'docker build -t spring-rest-hello-world:0.1 .'
+            }
+        }
+    }
+}
