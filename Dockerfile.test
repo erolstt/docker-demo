@@ -1,6 +1,5 @@
 FROM java:8-jdk-alpine
 LABEL maintainer="selitektay@gmail.com"
-VOLUME /tmp
 RUN mkdir docker-demo
 COPY . /docker-demo/
 RUN apk update && apk add bash

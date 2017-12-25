@@ -1,5 +1,3 @@
-
-
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
@@ -8,3 +6,66 @@ allprojects {
         mavenCentral()
     }
 }
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:3.2.1'
+    }
+}
+
+/******************
+ *     DOCKER Tasks
+ ******************/
+
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+import com.bmuschko.gradle.docker.tasks.image.*
+import com.bmuschko.gradle.docker.tasks.container.*
+
+docker {
+    // provide a url that Docker Remote API is enable
+    url = 'tcp://localhost:2375'
+    String springRestContainerName = System.getProperty('springRestContainerName', 'spring-rest')
+
+    task buildSpringBootRestImage(type: DockerBuildImage) {
+        group = 'Docker'
+        inputDir = file('.')
+        tag = 'erolstt/spring-rest-demo:latest'
+    }
+
+    task createRestAPIContainer(type: DockerCreateContainer) {
+        group = 'Docker'
+        containerName = springRestContainerName
+        dependsOn buildSpringBootRestImage
+        targetImageId { buildSpringBootRestImage.getImageId() }
+        portBindings = ['8080:8080']
+    }
+
+    task startRestAPIContainer(type: DockerStartContainer) {
+        group = 'Docker'
+        dependsOn createRestAPIContainer
+        targetContainerId { createRestAPIContainer.getContainerId() }
+    }
+
+    task stopRestAPIContainer(type: DockerStopContainer) {
+        group = 'Docker'
+        targetContainerId { springRestContainerName }
+    }
+
+    task removeRestAPIContainer(type: DockerRemoveContainer) {
+        dependsOn stopRestAPIContainer
+        group = 'Docker'
+        targetContainerId { springRestContainerName }
+    }
+
+    task removeSpringBootRestImage(type: DockerRemoveImage) {
+        group = 'Docker'
+        targetImageId { buildSpringBootRestImage.getImageId() }
+    }
+}
+
+
