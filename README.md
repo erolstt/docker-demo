@@ -8,8 +8,8 @@ Solve your test environment woes with these simple steps.
 * [Spring Restful Service](https://spring.io/guides/gs/rest-service/) - Simple 'Hello World' web service with Spring
 * [REST-assured](http://rest-assured.io/) - Rest webservice testing framework
 * [Gradle Docker plugin](https://github.com/bmuschko/gradle-docker-plugin) - For managing Docker images and containers
+* [Gradle SSH Plugin](https://gradle-ssh-plugin.github.io/) - A Gradle plugin which provides SSH facilities for continuous delivery.
 * [wait-for-it](https://github.com/vishnubob/wait-for-it) -  A pure bash script that will wait on the availability of a host and TCP port.
-
 
 ### Building application and running tests
 
