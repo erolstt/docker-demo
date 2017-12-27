@@ -101,3 +101,44 @@ Remove volumes:
 ```
 docker-compose -f docker-compose.test.yml down -v
 ```
+### Gradle Docker Tasks
+
+Build Image:
+It will build 'erolstt/spring-rest-demo:latest' image
+```
+./gradlew buildSpringBootRestImage
+```
+
+Create Container:
+It will create 'spring-rest' container from 'erolstt/spring-rest-demo:latest' image
+```
+./gradlew createRestAPIContainer
+```
+
+Start Container:
+It will start 'spring-rest' container on 8080 port
+```
+./gradlew startRestAPIContainer
+```
+
+Stop Container:
+It will stop 'spring-rest' container
+```
+./gradlew stopRestAPIContainer
+```
+
+Remove Container:
+It will remove 'spring-rest' container
+```
+./gradlew removeRestAPIContainer
+```
+
+Remove Image:
+It will remove 'erolstt/spring-rest-demo:latest'
+```
+./gradlew removeSpringBootRestImage
+```
+
+There are dependencies between tasks. That means if you run ``./gradlew startRestAPIContainer``
+task, it will build the image and run the container. So, you do not need to run build image 
+and create container tasks beforehand. 
