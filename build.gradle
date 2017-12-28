@@ -29,7 +29,7 @@ import com.bmuschko.gradle.docker.tasks.container.*
 
 docker {
     // provide a url that Docker Remote API is enable
-    // url = 'tcp://localhost:2375'
+    url = 'tcp://localhost:2375'
 
     String springRestContainerName = System.getProperty('springRestContainerName', 'spring-rest')
 
