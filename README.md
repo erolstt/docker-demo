@@ -1,4 +1,4 @@
-# Creating Testing Environment with Docker for Integration Testing
+# Create Testing Environment with Docker for Integration Testing
 
 Solve your test environment woes with these simple steps.
 
