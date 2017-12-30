@@ -142,3 +142,11 @@ It will remove 'erolstt/spring-rest-demo:latest'
 There are dependencies between tasks. That means if you run ``./gradlew startRestAPIContainer``
 task, it will build the image and run the container. So, you do not need to run build image 
 and create container tasks beforehand. 
+
+### Gradle Shh Tasks
+
+It will shh into the host machine and create `spring-rest-hello-world:0.1` image in it.
+
+```
+./gradlew createSpringRestImage -PlinuxHost=my-linux-host-without-http -PlinuxUser=user -PlinuxPassword=password
+```
