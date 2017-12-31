@@ -31,13 +31,11 @@ java -jar build/libs/gs-rest-service-0.1.0.jar
 Run integration test
 ```
 ./gradlew rest-service-api-test:test
-
 ```
 
 or
 ```
  ./gradlew rest-service-api-test:test -DBASE_URL=http://example.com:8080
-
 ```
 
 ## Docker Commands
@@ -46,13 +44,11 @@ Build docker image:
 
 ```
 docker build -t spring-rest-hello-world:0.1 .
-
 ```
 Run docker image:
 
 ```
 docker run -d -p 8080:8080 --name rest-hello  spring-rest-hello-world:0.1
-
 ```
 
 Stop docker container:
