@@ -12,37 +12,37 @@ public class HelloWorldTests extends HelloWorldTestConfiguration {
 
     @Test()
     public void testGetHelloWorld() {
-        given()
-                .contentType(ContentType.JSON).
-        when()
-                .get(ROOT_PATH_GREETING).
-        then()
-                .statusCode(HttpStatus.SC_OK)
-                .body("content", equalTo("Hello, World!"));
+        given().
+                contentType(ContentType.JSON).
+        when().
+                get(ROOT_PATH_GREETING).
+        then().
+                statusCode(HttpStatus.SC_OK).
+                body("content", equalTo("Hello, World!"));
     }
 
     @Test
     public void testHelloParam(){
-        given()
-                .contentType(ContentType.JSON)
-                .param("name", "Dublin").
-        when()
-                .get(ROOT_PATH_GREETING).
-        then()
-                .statusCode(HttpStatus.SC_OK)
-                .body("content", equalTo("Hello, Dublin!"));
+        given().
+                contentType(ContentType.JSON).
+                param("name", "Dublin").
+        when().
+                get(ROOT_PATH_GREETING).
+        then().
+                statusCode(HttpStatus.SC_OK).
+                body("content", equalTo("Hello, Dublin!"));
     }
 
     @Test
     public void testHelloParamNoValue(){
-        given()
-                .contentType(ContentType.JSON)
-                .param("name", "").
-        when()
-                .get(ROOT_PATH_GREETING).
-        then()
-                .statusCode(HttpStatus.SC_OK)
-                .body("content", equalTo("Hello, World!"));
+        given().
+                contentType(ContentType.JSON).
+                param("name", "").
+        when().
+                get(ROOT_PATH_GREETING).
+        then().
+                statusCode(HttpStatus.SC_OK).
+                body("content", equalTo("Hello, World!"));
     }
 
 }
