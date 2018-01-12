@@ -11,7 +11,7 @@ Solve your test environment woes with these simple steps.
 * [Gradle SSH Plugin](https://gradle-ssh-plugin.github.io/) - A Gradle plugin which provides SSH facilities for continuous delivery.
 * [wait-for-it](https://github.com/vishnubob/wait-for-it) -  A pure bash script that will wait on the availability of a host and TCP port.
 
-### Build application and run tests without Docker
+### Building application and running tests without Docker
 
 Start hello world spring rest service:
 ```
