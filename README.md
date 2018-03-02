@@ -40,30 +40,30 @@ or
 
 ## Docker Commands
 
-Build docker image:
+Building docker image:
 
 ```
 docker build -t spring-rest-hello-world:0.1 .
 ```
-Run docker image:
+Running docker image:
 
 ```
 docker run -d -p 8080:8080 --name rest-hello  spring-rest-hello-world:0.1
 ```
 
-Stop docker container:
+Stopping docker container:
 
 ```
 docker stop rest-hello
 ```
 
-Remove docker container:
+Removing docker container:
 
 ```
 docker rm rest-hello
 ```
 
-Remove docker image:
+Removing docker image:
 
 ```
 docker rmi spring-rest-hello-world:0.1
@@ -71,7 +71,7 @@ docker rmi spring-rest-hello-world:0.1
 
 #### Docker Compose
 
-Build environment:
+Building environment:
 ```
 docker-compose -f docker-compose.test.yml build
 ```
@@ -82,62 +82,62 @@ Spin up environment:
 docker-compose -f docker-compose.test.yml up
 ```
 
-Destroy environment:
+Destroying environment:
 
 ```
 docker-compose -f docker-compose.test.yml down
 ```
 
-Remove all images:
+Removing all images:
 ```
 docker-compose -f docker-compose.test.yml down --rmi all
 ```
 
-Remove volumes:
+Removing volumes:
 ```
 docker-compose -f docker-compose.test.yml down -v
 ```
 ### Gradle Docker Tasks
 
-Build Image:
+Building Image:
 It will build 'erolstt/spring-rest-demo:latest' image
 ```
 ./gradlew buildSpringBootRestImage
 ```
 
-Create Container:
+Creating Container:
 It will create 'spring-rest' container from 'erolstt/spring-rest-demo:latest' image
 ```
 ./gradlew createRestAPIContainer
 ```
 
-Start Container:
+Starting Container:
 It will start 'spring-rest' container on 8080 port
 ```
 ./gradlew startRestAPIContainer
 ```
 
-Stop Container:
+Stopping Container:
 It will stop 'spring-rest' container
 ```
 ./gradlew stopRestAPIContainer
 ```
 
-Remove Container:
+Removing Container:
 It will remove 'spring-rest' container
 ```
 ./gradlew removeRestAPIContainer
 ```
 
-Remove Image:
+Removing Image:
 It will remove 'erolstt/spring-rest-demo:latest'
 ```
 ./gradlew removeSpringBootRestImage
 ```
 
 There are dependencies between tasks. That means if you run ``./gradlew startRestAPIContainer``
-task, it will build the image and run the container. So, you do not need to run build image 
-and create container tasks beforehand. 
+task, it will build the image and run the container. So, you do not need to run build image
+and create container tasks beforehand.
 
 ### Gradle Shh Tasks
 
