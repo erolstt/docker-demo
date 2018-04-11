@@ -28,7 +28,7 @@ And run the jar file:
 java -jar build/libs/gs-rest-service-0.1.0.jar
 ```
 
-Run integration test
+Run integration test:
 ```
 ./gradlew rest-service-api-test:test
 ```
