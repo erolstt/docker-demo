@@ -13,7 +13,7 @@ Solve your test environment woes with these simple steps.
 
 ### Building application and running tests without Docker
 
-Start hello world spring rest service:
+Starting hello world spring rest service:
 ```
 ./gradlew bootRun
 ```
