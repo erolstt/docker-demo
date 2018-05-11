@@ -3,7 +3,7 @@
 Solve your test environment woes with these simple steps.
 
 ## Tools and frameworks that has been used for this tutorial
-* [Docker](https://www.docker.com/) - Software containerization platform
+* [Docker](https://www.docker.com/) - Software containerization platform.
 * [Docker Compose](https://github.com/docker/compose) - A tool for defining and running multi-container Docker applications.
 * [Spring Restful Service](https://spring.io/guides/gs/rest-service/) - Simple 'Hello World' web service with Spring
 * [REST-assured](http://rest-assured.io/) - Rest webservice testing framework
