@@ -130,7 +130,7 @@ It will remove 'spring-rest' container
 ```
 
 Removing Image:
-It will remove 'erolstt/spring-rest-demo:latest'
+It will remove 'erolstt/spring-rest-demo:latest'.
 ```
 ./gradlew removeSpringBootRestImage
 ```
