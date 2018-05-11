@@ -106,7 +106,7 @@ It will build 'erolstt/spring-rest-demo:latest' image
 ```
 
 Creating Container:
-It will create 'spring-rest' container from 'erolstt/spring-rest-demo:latest' image
+It will create 'spring-rest' container from 'erolstt/spring-rest-demo:latest' image.
 ```
 ./gradlew createRestAPIContainer
 ```
